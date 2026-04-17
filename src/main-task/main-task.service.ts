@@ -6,11 +6,9 @@ import { MainTaskDto } from './dto/mainTask.dto';
 export class MainTaskService {
     constructor(private prisma: PrismaService) {}
     async CreateMainTask(dto: MainTaskDto) {
-        const newTask = await this.prisma.mainTask.create({
-            data: {
-                name: dto.name
-            }
-        });
-        return newTask;
+        const existTask = await this.prisma.mainTask
+        // const newTask = await this.prisma.mainTask.create({
+        // });
+        // return newTask;
     }
 }
